@@ -139,10 +139,10 @@ func fillGenericHeader(e *Engine, raw C.cs_insn, insn *Instruction) {
 			insn.Groups = append(insn.Groups, uint(raw.detail.groups[i]))
 		}
 
-		var regsRead C.cs_regs
-		var regsReadCount C.uint8_t
-		var regsWrite C.cs_regs
-		var regsWriteCount C.uint8_t
+		// var regsRead C.cs_regs
+		// var regsReadCount C.uint8_t
+		// var regsWrite C.cs_regs
+		// var regsWriteCount C.uint8_t
 		// res := C.cs_regs_access(
 		// 	e.handle,
 		// 	&raw,
