@@ -143,23 +143,23 @@ func fillGenericHeader(e *Engine, raw C.cs_insn, insn *Instruction) {
 		var regsReadCount C.uint8_t
 		var regsWrite C.cs_regs
 		var regsWriteCount C.uint8_t
-		res := C.cs_regs_access(
-			e.handle,
-			&raw,
-			&regsRead[0],
-			&regsReadCount,
-			&regsWrite[0],
-			&regsWriteCount)
+		// res := C.cs_regs_access(
+		// 	e.handle,
+		// 	&raw,
+		// 	&regsRead[0],
+		// 	&regsReadCount,
+		// 	&regsWrite[0],
+		// 	&regsWriteCount)
 
-		if Errno(res) == ErrOK {
-			for i := 0; i < int(regsReadCount); i++ {
-				insn.AllRegistersRead = append(insn.AllRegistersRead, uint(regsRead[i]))
-			}
+		// if Errno(res) == ErrOK {
+		// 	for i := 0; i < int(regsReadCount); i++ {
+		// 		insn.AllRegistersRead = append(insn.AllRegistersRead, uint(regsRead[i]))
+		// 	}
 
-			for i := 0; i < int(regsWriteCount); i++ {
-				insn.AllRegistersWritten = append(insn.AllRegistersWritten, uint(regsWrite[i]))
-			}
-		}
+		// 	for i := 0; i < int(regsWriteCount); i++ {
+		// 		insn.AllRegistersWritten = append(insn.AllRegistersWritten, uint(regsWrite[i]))
+		// 	}
+		// }
 	}
 
 }
